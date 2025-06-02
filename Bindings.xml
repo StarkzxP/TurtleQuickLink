@@ -1,0 +1,5 @@
+<Bindings>
+    <Binding name="TURTLE_QUICK_LINK" header="TURTLE_QUICK_LINK">
+        ShowTurtleDBLink()
+    </Binding>
+</Bindings>

@@ -1,0 +1,95 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Frame name="TurtleCopyFrame" parent="UIParent" frameStrata="DIALOG" hidden="true" enableMouse="true">
+    <Size x="330" y="120"/>
+    <Anchors>
+      <Anchor point="TOP">
+        <Offset x="0" y="-100"/>
+      </Anchor>
+    </Anchors>
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" 
+              edgeFile="Interface\DialogFrame\UI-DialogBox-Border" 
+              tile="true">
+      <BackgroundInsets>
+        <AbsInset left="11" right="12" top="12" bottom="11"/>
+      </BackgroundInsets>
+      <TileSize>
+        <AbsValue val="32"/>
+      </TileSize>
+      <EdgeSize>
+        <AbsValue val="32"/>
+      </EdgeSize>
+    </Backdrop>
+    <Layers>
+      <Layer level="ARTWORK">
+        <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
+          <Size x="220" y="64"/>
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset x="0" y="12"/>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <FontString name="$parentTitle" inherits="GameFontNormal" text="Turtle Quick Link">
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset x="0" y="-1.5"/>
+            </Anchor>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentTitle" inherits="GameFontNormal" text="Press CTRL-C to copy. ESCAPE/ENTER/SPACE to close.">
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset x="0" y="-30"/>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <EditBox name="$parentEditBox" autoFocus="false" multiLine="false" letters="1000">
+        <Size x="265" y="32"/>
+        <Anchors>
+          <Anchor point="TOP">
+            <Offset x="0" y="-45"/>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture name="$parentTexture" file="Interface\ChatFrame\UI-ChatInputBorder" tiled="true">
+              <Size x="290" y="32"/>
+              <Anchors>
+                <Anchor point="CENTER"/>
+              </Anchors>
+              <TexCoords left="0" right="1" top="0" bottom="1"/>
+            </Texture>
+          </Layer>
+        </Layers>
+        <FontString inherits="GameFontHighlight"/>
+        <Scripts>
+          <OnEscapePressed>
+            TurtleCopyFrame:Hide();
+          </OnEscapePressed>
+          <OnEnterPressed>
+            TurtleCopyFrame:Hide();
+          </OnEnterPressed>
+          <OnSpacePressed>
+            TurtleCopyFrame:Hide();
+          </OnSpacePressed>
+        </Scripts>
+      </EditBox>
+      <Button name="$parentCopyButton" inherits="UIPanelButtonTemplate" text="Close">
+        <Size x="100" y="22"/>
+        <Anchors>
+          <Anchor point="BOTTOM">
+            <Offset x="0" y="20"/>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            TurtleCopyFrame:Hide();
+          </OnClick>
+        </Scripts>
+      </Button>
+    </Frames>
+  </Frame>
+</Ui>
