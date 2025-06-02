@@ -24,5 +24,5 @@ function strategies.GetItemFromTooltip(data)
     if not data.tooltip then
         return
     end
-    return GetTypeAndIDFromLink(data.tooltip.itemLink)
+    return GetTypeAndIdFromLink(data.tooltip.itemLink)
 end
