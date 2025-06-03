@@ -10,9 +10,9 @@ local currentUrl = ""
 
 local function ShowCopyLinkFrame(url)
     TurtleCopyFrame:Show()
-    TurtleCopyFrameEditBox:SetText(url or "")
-    TurtleCopyFrameEditBox:HighlightText()
-    TurtleCopyFrameEditBox:SetFocus()
+    TurtleCopyFrame_EditBox:SetText(url or "")
+    TurtleCopyFrame_EditBox:HighlightText()
+    TurtleCopyFrame_EditBox:SetFocus()
 end
 
 local function CreateUrl(dataSources)
