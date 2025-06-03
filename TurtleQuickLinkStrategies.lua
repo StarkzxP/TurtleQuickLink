@@ -61,13 +61,24 @@ function strategies.GetItemFromItemRef(data)
     return nil
 end
 
-function strategies.GetQuestTitleFromQuestLog(data)
+function strategies.GetQuestFromItemRef(data)
+    if not data.focus or not data.focus.pfQtext then
+        return nil
+    end
+    return GetTypeAndIdFromLink(data.focus.pfQtext)
+end
+
+function strategies.GetQuestFromQuestLog(data)
     if not data.focus then
         return nil
     end
     local questIndex = GetQuestLogTitleIndex(data.focus:GetName())
     if not questIndex then
         return nil
+    end
+    if pfDatabase and pfDatabase.GetQuestIDs then
+        local possibleQuests = pfDatabase:GetQuestIDs(questIndex)
+        return possibleQuests[1], "quest"
     end
     local questTitle, _, _, isHeader = GetQuestLogTitle(questIndex)
     if not questTitle or isHeader then
