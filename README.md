@@ -4,7 +4,13 @@
 
 Inspired by the amazing retail and classic addon [Wowhead Quick Link](https://github.com/NielsHeltner/wowhead-quick-link), **Turtle Quick Link** provides similar functionality for **Turtle WoW players**, but uses [Turtle WoW's Database](https://database.turtle-wow.org/) links as the source of information.
 
-**⚠️ Currently, the addon only supports items.** Vanilla WoW's API differs significantly from the modern version, so retrieving data for other things requires different approaches. However, I aim to extend compatibility to chat links, quests (including pfQuest tracker) and NPCs.
+## Accepted Sources
+
+-   **Items in bags and bank** (and other places probably)
+-   **Item links in chat**: Click the link, then press CTRL-C on the tooltip
+-   **Quest links in chat**: Requires pfQuest (usage same as item links)
+-   **Quests in quest log**: Requires pfQuest for non-English languages and precision (English-only without pfQuest)
+-   **Quests in pfQuest tracker**
 
 ## How to Use
 
