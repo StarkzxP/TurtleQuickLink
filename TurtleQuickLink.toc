@@ -4,6 +4,8 @@
 ## Notes: Gives quick access to the Turtle WoW database.
 ## Author: StarkzXP1
 
-TurtleQuickLink.xml
+TurtleQuickLinkDialog.lua
+TurtleQuickLinkDialog.xml
+
 TurtleQuickLink.lua
 TurtleQuickLinkStrategies.lua
