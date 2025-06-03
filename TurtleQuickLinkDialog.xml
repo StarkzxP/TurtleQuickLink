@@ -93,7 +93,7 @@
     </Frames>
     <Scripts>
       <OnLoad>
-        TurtleCopyFrame_OnLoad(self)
+        TurtleCopyFrame_OnLoad()
       </OnLoad>
     </Scripts>
   </Frame>
