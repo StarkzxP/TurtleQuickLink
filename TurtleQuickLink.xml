@@ -1,6 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
-  <Frame name="TurtleCopyFrame" parent="UIParent" frameStrata="DIALOG" hidden="true" enableMouse="true">
-    <Size x="330" y="120"/>
+  <Frame name="TurtleCopyFrame" parent="UIParent" frameStrata="TOOLTIP" hidden="true" enableMouse="true">
+    <Size x="350" y="120"/>
     <Anchors>
       <Anchor point="TOP">
         <Offset x="0" y="-100"/>
