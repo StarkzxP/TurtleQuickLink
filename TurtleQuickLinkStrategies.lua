@@ -93,3 +93,17 @@ function strategies.GetQuestFromPfQuestTracker(data)
     end
     return nil
 end
+
+function strategies.GetNPCFromMouseover(data)
+    local unitName = UnitName("mouseover")
+    if not unitName or not pfDatabase or not pfDatabase.GetIDByName then
+        return nil
+    end
+    local unitsResult = pfDatabase:GetIDByName(unitName, "units")
+    if next(unitsResult) == nil then
+        return nil
+    end
+    for unitId in pairs(unitsResult) do
+        return unitId, "npc"
+    end
+end

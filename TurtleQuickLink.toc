@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: Turtle Quick Link
-## Version: 1.3.0
+## Version: 1.4.0
 ## Notes: Gives quick access to the Turtle WoW database.
 ## Author: StarkzXP1
 
