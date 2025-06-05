@@ -4,7 +4,7 @@
 
 Inspired by the amazing retail and classic addon [Wowhead Quick Link](https://github.com/NielsHeltner/wowhead-quick-link), **Turtle Quick Link** provides similar functionality for **Turtle WoW players**, but uses [Turtle WoW's Database](https://database.turtle-wow.org/) links as the source of information.
 
-A lot of the sources require [pfQuest](https://github.com/shagu/pfQuest) and [pfQuest-turtle](https://github.com/shagu/pfQuest-turtle) for them to work or to be more precise, so a really recommend installing both.
+A lot of the sources require [pfQuest](https://github.com/shagu/pfQuest) and [pfQuest-turtle](https://github.com/shagu/pfQuest-turtle) for them to work or to be more precise, so I really recommend installing both.
 
 ## Accepted Sources
 
