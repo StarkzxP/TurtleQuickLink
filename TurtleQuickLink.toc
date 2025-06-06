@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: Turtle Quick Link
-## Version: 1.4.1
+## Version: 1.5.0
 ## Notes: Gives quick access to the Turtle WoW database.
 ## Author: StarkzXP1
 ## OptionalDeps: pfQuest, pfQuest-turtle

@@ -37,6 +37,18 @@ local function GetQuestLogTitleIndex(str)
     return nil
 end
 
+function ExtractNumberBeforeColon(inputString)
+    if not inputString then
+        return nil
+    end
+    local colonPos = string.find(inputString, ":", 1, true)
+    if colonPos and colonPos > 1 then
+        local numberStr = string.sub(inputString, 1, colonPos - 1)
+        return tonumber(numberStr)
+    end
+    return nil
+end
+
 local function urlencode(url)
     local char_to_hex = function(c)
         return string.format("%%%02X", string.byte(c))
@@ -47,18 +59,32 @@ local function urlencode(url)
     return url
 end
 
-function strategies.GetItemFromTooltip(data)
-    if not data.tooltip then
+function strategies.GetItemLinkFromTooltip(data)
+    if not data.tooltip or not data.tooltip.itemLink then
         return nil
     end
     return GetTypeAndIdFromLink(data.tooltip.itemLink)
 end
 
-function strategies.GetItemFromItemRef(data)
-    if data.focus and data.focus.itemID then
-        return data.focus.itemID, "item"
+function strategies.GetItemIdFromTooltip(data)
+    if not data.tooltip or not data.tooltip.itemID then
+        return nil
     end
-    return nil
+    return data.tooltip.itemID, "item"
+end
+
+function strategies.GetItemIdFromAux(data)
+    if not data.focus or not data.focus.expandKey then
+        return nil
+    end
+    return ExtractNumberBeforeColon(data.focus.expandKey), "item"
+end
+
+function strategies.GetItemFromItemRef(data)
+    if not data.focus or not data.focus.itemID then
+        return nil
+    end
+    return data.focus.itemID, "item"
 end
 
 function strategies.GetQuestFromItemRef(data)
@@ -88,10 +114,10 @@ function strategies.GetQuestFromQuestLog(data)
 end
 
 function strategies.GetQuestFromPfQuestTracker(data)
-    if data.focus and data.focus.questid then
-        return data.focus.questid, "quest"
+    if not data.focus or not data.focus.questid then
+        return nil
     end
-    return nil
+    return data.focus.questid, "quest"
 end
 
 function strategies.GetNPCFromMouseover(data)
